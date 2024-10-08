@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>My TO-DO List</h1>
+        <h4>JS TrainingLAB</h4>
+    </header>
+    
+    <div class="pageContainer">
+        <main>
+            <div class="listContainer">
+                <div class="inputContainer">
+                    <input type="text" name="addToList" id="addInput" placeholder="Inserisci promemoria" minlength="2" maxlength="30">
+                    <button type="button" onclick="addListItem()" id="addBtn">+</button>
+                </div>
+
+                <ul class="list">
+                    <li class="listItem">
+                        <button type="button" class="checkItem">V</button>
+                        <p>Prova 1</p>
+                        <button type="button" class="deleteItem">U</button>
+                    </li>
+                    <li class="listItem">
+                        <button type="button" class="checkItem">V</button>
+                        <p>Prova 1</p>
+                        <button type="button" class="deleteItem">U</button>
+                    </li>
+                    <li class="listItem">
+                        <button type="button" class="checkItem">V</button>
+                        <p>Prova 1</p>
+                        <button type="button" class="deleteItem">U</button>
+                    </li>
+                </ul>
+
+                <script src="script.js"></script>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

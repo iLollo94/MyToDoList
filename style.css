@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid green;
+    background-color: chartreuse;
+
+    h1 {
+        margin-bottom: 10px;
+        text-transform: uppercase;
+
+        &::first-letter {
+            font-size: 1.5em;
+            color: darkgreen;
+        }
+    }
+}
+
+div.pageContainer {
+    width: min(100%, 1200px);
+    margin: auto;
+
+    main {
+        padding: 20px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+
+        div.listContainer {
+            div.inputContainer {
+                border: 2px solid darkgreen;
+                border-radius: 30px;
+                padding: 5px;
+                overflow: hidden;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: stretch;
+
+                input#addInput {
+                    all: unset;
+                    width: 300px;
+                    padding: 0 15px;
+                    margin: 0 10px;
+                    line-height: 50px;
+                    font-size: 20px;
+                }
+
+                button#addBtn {
+                    all: unset;
+                    height: 50px;
+                    width: 50px;
+                    font-size: 50px;
+                    line-height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+
+                    background-color: darkgreen;
+                    border-radius: 50%;
+                    color: #cecece;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                    cursor: pointer;
+                }
+            }
+
+            ul.list {
+                list-style-type: none;
+                margin: 0 30px;
+
+                li.listItem {
+                    border: 1px solid darkgreen;
+                    border-top: none;
+                    padding: 2px;
+
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: stretch;
+
+                    overflow: hidden;
+
+                    p {
+                        flex: 1;
+                        line-height: 40px;
+                        padding: 0 5px;
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        font-weight: bold;
+
+                        position: relative;
+                        right: 40px;
+
+                        &::first-letter {
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    button {
+                        all: unset;
+                        width: 40px;
+                        height: 40px;
+                        color: #cecece;
+                        font-size: 30px;
+                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                        line-height: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-content: center;
+                        cursor: pointer;
+
+                        position: relative;
+
+                        &.checkItem {
+                            background-color: forestgreen;
+                            right: 50px;
+                        }
+
+                        &.deleteItem {
+                            background-color: crimson;
+                            left: 50px;
+                        }
+                    }
+
+                    &:nth-child(odd) {
+                        background-color: #d5f39d;
+                    }
+
+                    &:hover {
+                        background-color: #d5ff88;
+
+                        p {
+                            right: 0;
+                            transition: .5s ease;
+                        }
+
+                        button.checkItem {
+                            right: 0;
+                            transition: .5s ease;
+                        }
+
+                        button.deleteItem {
+                            left: 0;
+                            transition: .5s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
