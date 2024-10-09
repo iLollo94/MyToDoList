@@ -1,3 +1,5 @@
+@import 'variables';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,20 +7,34 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+body {
+    background-color: $mainLightColor;
+}
+
+p,
+a {
+    color: $mainDarkColor;
+}
+
 header {
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid green;
-    background-color: chartreuse;
+    border-bottom: 2px solid $mainDarkColor;
+    background-color: $altDarkColor;
 
     h1 {
         margin-bottom: 10px;
         text-transform: uppercase;
+        color: $mainLightColor;
 
         &::first-letter {
             font-size: 1.5em;
-            color: darkgreen;
+            color: $altLigthColor;
         }
+    }
+
+    h4 {
+        color: $fillerColor;
     }
 }
 
@@ -34,7 +50,7 @@ div.pageContainer {
 
         div.listContainer {
             div.inputContainer {
-                border: 2px solid darkgreen;
+                border: 2px solid $mainDarkColor;
                 border-radius: 30px;
                 padding: 5px;
                 overflow: hidden;
@@ -44,28 +60,32 @@ div.pageContainer {
 
                 input#addInput {
                     all: unset;
-                    width: 300px;
+                    width: 400px;
                     padding: 0 15px;
                     margin: 0 10px;
-                    line-height: 50px;
+                    line-height: 30px;
                     font-size: 20px;
                 }
 
                 button#addBtn {
                     all: unset;
-                    height: 50px;
-                    width: 50px;
-                    font-size: 50px;
-                    line-height: 50px;
+                    height: 30px;
+                    width: 30px;
+                    font-size: 30px;
+                    line-height: 30px;
                     display: flex;
                     justify-content: center;
                     align-content: center;
 
-                    background-color: darkgreen;
+                    background-color: $mainDarkColor;
                     border-radius: 50%;
                     color: #cecece;
                     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
                     cursor: pointer;
+
+                    &.disabled {
+                        background-color: rgb(177, 177, 177);
+                    }
                 }
             }
 
@@ -74,7 +94,7 @@ div.pageContainer {
                 margin: 0 30px;
 
                 li.listItem {
-                    border: 1px solid darkgreen;
+                    border: 1px solid $mainDarkColor;
                     border-top: none;
                     padding: 2px;
 
@@ -84,67 +104,47 @@ div.pageContainer {
 
                     overflow: hidden;
 
-                    p {
-                        flex: 1;
-                        line-height: 40px;
+                    a.text {
+                        display: block;
+                        text-decoration: none;
+                        flex-grow: 1;
+                        line-height: 30px;
                         padding: 0 5px;
                         text-transform: uppercase;
                         font-size: 14px;
                         font-weight: bold;
+                    }
 
-                        position: relative;
-                        right: 40px;
+                    &.checked {
+                        background-color: $checkedColor !important;
 
-                        &::first-letter {
-                            font-size: 1.5em;
+                        a {
+                            text-decoration: line-through;
+
+                            // &::before {
+                            //     content: "";
+                            // }
                         }
                     }
 
-                    button {
-                        all: unset;
-                        width: 40px;
-                        height: 40px;
-                        color: #cecece;
+                    i.material-icons:not(.checkmark) {
                         font-size: 30px;
-                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-                        line-height: 40px;
-                        display: flex;
-                        justify-content: center;
-                        align-content: center;
-                        cursor: pointer;
+                        opacity: 0;
+                        color: $mainDarkColor;
 
-                        position: relative;
-
-                        &.checkItem {
-                            background-color: forestgreen;
-                            right: 50px;
-                        }
-
-                        &.deleteItem {
-                            background-color: crimson;
-                            left: 50px;
+                        &.delete-item {
+                            color: $altLigthColor;
                         }
                     }
 
                     &:nth-child(odd) {
-                        background-color: #d5f39d;
+                        background-color: rgba(0, 0, 0, 0.1);
                     }
 
                     &:hover {
-                        background-color: #d5ff88;
 
-                        p {
-                            right: 0;
-                            transition: .5s ease;
-                        }
-
-                        button.checkItem {
-                            right: 0;
-                            transition: .5s ease;
-                        }
-
-                        button.deleteItem {
-                            left: 0;
+                        i.material-icons {
+                            opacity: 1;
                             transition: .5s ease;
                         }
                     }
